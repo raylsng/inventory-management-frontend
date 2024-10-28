@@ -48,7 +48,7 @@
 <script>
 //Import Komponen Custom
 import ItemCard from "./ItemCard.vue";
-import Modal from "../Modal.vue";
+import Modal from "../../Modal.vue";
 import ItemForm from "./ItemForm.vue";
 
 export default {
@@ -94,17 +94,7 @@ export default {
       this.showForm = true;
     },
 
-    handleSubmit(item) { // video lms
-      if (this.isEdit) {
-        const index = this.items.findIndex((i) => i.kode === item.kode);
-        this.items[index] = item;
-      } else {
-        this.items.push(item);
-      }
-      this.showForm = false;
-    },
 
-    /*
     handleSubmit(item) { //text lms
       if (
         item.kode &&
@@ -124,14 +114,11 @@ export default {
 
       this.showForm = false;
     },
-    */
 
     cancelEditForm() {
       this.showForm = false;
-      selectedItem: null; //video lms
-      isEdit: false; //video lms
-      //this.selectedItem: null; //text lms
-      //this.isEdit: false; //text lms
+      this.selectedItem = null; //text lms rev =
+      this.isEdit = false; //text lms rev =
     },
 
     deleteItem(kode) {
